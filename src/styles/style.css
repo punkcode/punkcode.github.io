@@ -1,0 +1,8 @@
+@import "tailwindcss/base";
+@import "./punk-code-base.css";
+
+@import "tailwindcss/components";
+@import "./punk-code-components.css";
+
+@import "tailwindcss/utilities";
+@import "./punk-code-utilities.css";
