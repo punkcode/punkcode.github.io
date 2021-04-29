@@ -1,2 +1,2 @@
-# punkcode.github.io
+# Punk Code
 A website for Punk Code.
