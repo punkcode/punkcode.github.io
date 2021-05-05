@@ -1,0 +1,12 @@
+{% extends "./base.njk" %}
+
+{%- block main %}
+  <section>
+    {{ content | safe }}
+  </section>
+  <section>
+    <p>Read the <a href="">Punk Code Manifesto</a>.</p>
+    <p>Watch the <a href="">DIY Guides</a>.</p>
+    <p>See my <a href="">Design Choices</a>.</p>
+  </section>
+{% endblock -%}
