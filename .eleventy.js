@@ -16,6 +16,10 @@ module.exports = function(eleventyConfig) {
   // If it changes, write it to our generated full site
   eleventyConfig.addPassthroughCopy({ './_tmp/style.css': './style.css' });
   
+  // Copy over images
+  eleventyConfig.addPassthroughCopy({ './src/favicon.ico': './favicon.ico' });
+  eleventyConfig.addPassthroughCopy({ './src/assets': './assets' });
+  
   eleventyConfig.addTransform('htmlmin', function (content, outputPath) {
     if (process.env.ELEVENTY_PRODUCTION && outputPath && outputPath.endsWith('.html') ) {
       let minified = htmlmin.minify(content, {
