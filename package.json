@@ -12,13 +12,16 @@
     "build:html": "cross-env ELEVENTY_PRODUCTION=true & eleventy",
     "watch": "npm-run-all --parallel watch:html watch:css",
     "watch:css": "postcss src/styles/style.css --o _tmp/style.css --watch",
-    "watch:html": "eleventy --serve"
+    "watch:html": "eleventy --serve",
+    "deploy": "gh-pages -d _site"
   },
   "devDependencies": {
     "@11ty/eleventy": "^0.12.1",
+    "@11ty/eleventy-navigation": "^0.2.0",
     "autoprefixer": "^10.2.5",
     "clean-css-cli": "^5.2.2",
     "cross-env": "^7.0.3",
+    "gh-pages": "^3.1.0",
     "html-minifier": "^4.0.0",
     "npm-run-all": "^4.1.5",
     "postcss": "^8.2.10",
