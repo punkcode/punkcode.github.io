@@ -6,7 +6,7 @@ module.exports = function(eleventyConfig) {
   // Create an alias for the base layer so we can reference it as base rather than the full paht.
   eleventyConfig.addLayoutAlias('base', 'layouts/base.njk');
   eleventyConfig.addLayoutAlias('home', 'layouts/home.njk');
-  eleventyConfig.addLayoutAlias('section', 'layouts/section.njk');
+  eleventyConfig.addLayoutAlias('page', 'layouts/page.njk');
 
   // As our CSS is generated in to a folder that git ignores, we want to make sure eleventy still reads it
   eleventyConfig.setUseGitIgnore(false);

@@ -1,5 +1,5 @@
 ---
-layout: section
+layout: page
 title: Design Choices
 eleventyNavigation:
   key: Choices
