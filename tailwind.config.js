@@ -1,10 +1,23 @@
+const colors = require('tailwindcss/colors');
+
 module.exports = {
   purge: {
     content: ['./_site/**/*.html'],
   },
-  darkMode: false, // or 'media' or 'class'
+  darkMode: 'media',
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        penguin: {
+          orange: '#fb4901',
+          tan: '#fdfbd2',
+          black: '#1c211d',
+        },
+      },
+      fontFamily: {
+        bowlby: ['Bowlby One SC', 'sans-serif'],
+      },
+    },
   },
   variants: {
     extend: {},

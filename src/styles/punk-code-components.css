@@ -1,0 +1,11 @@
+@layer base {
+  .logo {
+    @apply font-bowlby text-5xl;
+  }
+  @supports (-webkit-text-stroke: 0.13rem #1c211d) {
+    .logo {
+      @apply text-penguin-tan;
+      -webkit-text-stroke: 0.13rem #1c211d;
+    }
+  }
+}

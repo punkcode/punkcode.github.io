@@ -1,9 +1,5 @@
-<header>
-  <nav>
-    <a href="/">Punk Code</a>
-    {% set navPages = collections.all | eleventyNavigation %}
-    {%- for entry in navPages %}
-      <a href="{{ entry.url | url }}">{{ entry.title }}</a>
-    {%- endfor %}
+<header class="bg-penguin-orange border-b-2 border-penguin-black dark:border-penguin-tan">
+  <nav class="text-center py-4">
+    <a href="/" class="logo">Punk Code</a>
   </nav>
 </header>

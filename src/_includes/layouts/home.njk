@@ -7,7 +7,11 @@
   <nav>
     {% set navPages = collections.all | eleventyNavigation %}
     {%- for entry in navPages %}
-      <p>{{ entry.excerpt }} <a href="{{ entry.url | url }}">{{ entry.title }}</a>.</p>
+      <section class="text-center">
+        <h1><a href="{{ entry.url | url }}">{{ entry.title }}</a></h1>
+        <p>{{ entry.excerpt }}</p>
+      </section>
+      <hr />
     {% endfor -%}
   </nav>
 {% endblock -%}

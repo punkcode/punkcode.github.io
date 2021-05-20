@@ -1,5 +1,22 @@
 @layer base {
+  @font-face {
+    font-family: Bowlby One SC;
+    src: url(/assets/fonts/Bowlby_One_SC/BowlbyOneSC-Regular.woff) format("woff");
+  }
+  
   h1 {
-    @apply text-red-500;
+    @apply font-bowlby text-4xl;
+  }
+  h2 {
+    @apply text-xl;
+  }
+  a {
+    @apply text-penguin-orange;
+  }
+  header a {
+    @apply text-penguin-black;
+  }
+  hr {
+    @apply border-penguin-orange border-t-2 w-1/12 text-center mx-auto mt-2 mb-4;
   }
 }

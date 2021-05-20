@@ -6,9 +6,9 @@
     <link rel="stylesheet" href="/style.css">
     <title>{%- if title %}{{ title }} | {% endif %}{{ site.title }}</title>
   </head>
-  <body>
+  <body class="bg-penguin-tan dark:bg-penguin-black font-mono text-penguin-black dark:text-penguin-tan">
     {% include "./_header.njk" %}
-    <main>
+    <main class="container mx-auto p-4 flex flex-col">
       {%- block main %}
         {{ content | safe }}
       {% endblock -%}
