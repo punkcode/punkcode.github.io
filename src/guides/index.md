@@ -1,5 +1,6 @@
 ---
 title: DIY Guides
+description: Bork
 eleventyNavigation:
   key: Guides
   title: DIY Guides

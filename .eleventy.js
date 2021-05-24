@@ -12,13 +12,13 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.setUseGitIgnore(false);
 
   // Watch our generated CSS file for changes
-  eleventyConfig.addWatchTarget('./_tmp/style.css');
+  eleventyConfig.addWatchTarget('_tmp/style.css');
   // If it changes, write it to our generated full site
-  eleventyConfig.addPassthroughCopy({ './_tmp/style.css': './style.css' });
+  eleventyConfig.addPassthroughCopy({ '_tmp': 'styles' });
   
-  // Copy over images
-  eleventyConfig.addPassthroughCopy({ './src/favicon.ico': './favicon.ico' });
-  eleventyConfig.addPassthroughCopy({ './src/assets': './assets' });
+  // Copy over assets/images
+  eleventyConfig.addPassthroughCopy('src/favicon.ico');
+  eleventyConfig.addPassthroughCopy('src/assets');
   
   eleventyConfig.addTransform('htmlmin', function (content, outputPath) {
     if (process.env.ELEVENTY_PRODUCTION && outputPath && outputPath.endsWith('.html') ) {

@@ -1,6 +1,7 @@
 ---
-layout: page
 title: About
+description: Bork
+layout: page
 eleventyNavigation:
   key: About
   title: About
