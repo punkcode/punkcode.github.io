@@ -1,10 +1,11 @@
 ---
 title: DIY Guides
-description: Bork
+description: A series of short videos, also written out as articles, with practical tips for ethical and sustainable web development.
 eleventyNavigation:
   key: Guides
   title: DIY Guides
   excerpt: A series of short videos/articles with practical tips for ethical and sustainable web development.
+  goToText: Watch/Read the DIY Guides
   order: 1
 pagination:
   data: collections.guides

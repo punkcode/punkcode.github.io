@@ -1,11 +1,12 @@
 ---
 title: Punk Code Manifesto
-description: Bork
+description: The Punk Code Manifesto is a guideline to write code for ethical and sustainable web development. This includes the concept Code SLOW, trying to follow the Slow Movement but for coding.
 layout: page
 eleventyNavigation:
   key: Manifesto
   title: Punk Code Manifesto
   excerpt: A rundown of my Punk Code that I follow to write <punk-code>.
+  goToText: Read the Manifesto
   order: 2
 ---
 I follow a [Punk Code](#thepunkcode) to write [&lt;punk-code&gt;](#punk-code). Also, I am a believer in the [Slow Movement](https://www.slowmovement.com/) and a proponent of [Code SLOW](#codeSLOW).
