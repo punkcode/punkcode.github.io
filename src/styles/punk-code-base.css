@@ -19,10 +19,7 @@
     @apply text-penguin-orange;
   }
 
-  footer {
-    @apply text-penguin-black dark:text-penguin-tan;
-  }
   footer a {
-    @apply text-penguin-tan dark:text-penguin-black;
+    @apply text-penguin-tan border-r last:border-r-0 border-penguin-tan pr-1 last:p-0;
   }
 }

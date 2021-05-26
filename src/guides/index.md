@@ -4,6 +4,7 @@ description: A series of short videos, also written out as articles, with practi
 eleventyNavigation:
   key: Guides
   title: DIY Guides
+  footerTitle: Guides
   excerpt: A series of short videos/articles with practical tips for ethical and sustainable web development.
   goToText: Watch/Read the DIY Guides
   order: 1

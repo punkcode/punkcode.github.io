@@ -1,7 +1,11 @@
-<footer class="bg-penguin-orange border-t-2 border-penguin-black dark:border-penguin-tan">
-  <nav class="flex flex-row justify-end">
-    <p class="m-1 mr-auto p-1">Copyright 2021 Christoffer Lagerstedt</p>
-    <a href="/" class="m-1 p-1">GitHub</a>
-    <a href="/" class="m-1 p-1">LinkedIn</a>
+<footer class="flex flex-col md:flex-row justify-between px-4 py-2 text-penguin-black bg-penguin-orange border-t-2 border-penguin-black dark:border-penguin-tan">
+  <p>Copyright 2021 Christoffer Lagerstedt</p>
+  <nav>
+    {% set navPages = collections.all | eleventyNavigation %}
+    {%- for entry in navPages %}
+      <a href="{{ entry.url }}">{{ entry.footerTitle }}</a>
+    {% endfor -%}
+    <a href="https://github.com/punkcode/punkcode.github.io" target="_blank">GitHub</a>
+    <a href="https://www.linkedin.com/in/christofferlagerstedt/" target="_blank">LinkedIn</a>
   </nav>
 </footer>

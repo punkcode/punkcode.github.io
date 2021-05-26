@@ -5,6 +5,7 @@ layout: page
 eleventyNavigation:
   key: Manifesto
   title: Punk Code Manifesto
+  footerTitle: Manifesto
   excerpt: A rundown of my Punk Code that I follow to write <punk-code>.
   goToText: Read the Manifesto
   order: 2
