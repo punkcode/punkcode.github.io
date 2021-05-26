@@ -1,0 +1,14 @@
+@layer base {
+  @supports (-webkit-text-stroke: 0.13rem #1c211d) {
+    .with-stroke {
+      @apply font-bowlby text-penguin-tan;
+      -webkit-text-stroke: 0.13rem #1c211d;
+    }
+    a.with-stroke {
+      @apply hover:no-underline hover:text-penguin-black focus:no-underline focus:text-penguin-black;
+    }
+    a.with-stroke:hover, a.with-stroke:focus {
+      -webkit-text-stroke-color: #fdfbd2;
+    }
+  }
+}

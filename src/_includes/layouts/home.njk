@@ -1,17 +1,11 @@
 {% extends "./base.njk" %}
+{% from "../macros/components.njk" import card %}
 
 {%- block main %}
-  <section>
-    {{ content | safe }}
-  </section>
-  <nav>
+  <nav class="grid gap-4 grid-cols-1 lg:grid-cols-2">
     {% set navPages = collections.all | eleventyNavigation %}
     {%- for entry in navPages %}
-      <section class="text-center">
-        <h1><a href="{{ entry.url | url }}">{{ entry.title }}</a></h1>
-        <p>{{ entry.excerpt }}</p>
-      </section>
-      <hr />
+      {{ card(entry.title, entry.excerpt, entry.url, entry.goToText) }}
     {% endfor -%}
   </nav>
 {% endblock -%}

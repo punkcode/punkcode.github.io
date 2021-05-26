@@ -4,19 +4,25 @@
     src: url(/assets/fonts/Bowlby_One_SC/BowlbyOneSC-Regular.woff) format("woff");
   }
   
+  h1, h2 {
+    @apply font-bowlby;
+  }
   h1 {
-    @apply font-bowlby text-4xl;
+    @apply text-3xl md:text-4xl lg:text-5xl;
   }
-  h2 {
-    @apply text-3xl;
-  }
+
   a {
+    @apply hover:underline focus:underline;
+  }
+
+  main a {
     @apply text-penguin-orange;
   }
-  header a {
-    @apply text-penguin-black;
+
+  footer {
+    @apply text-penguin-black dark:text-penguin-tan;
   }
-  hr {
-    @apply border-penguin-orange border-t-2 w-1/12 text-center mx-auto mt-2 mb-4;
+  footer a {
+    @apply text-penguin-tan dark:text-penguin-black;
   }
 }
