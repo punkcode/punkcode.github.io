@@ -8,8 +8,8 @@
   "scripts": {
     "clean": "rimraf _site && rimraf _tmp",
     "build": "npm-run-all clean build:html build:css",
-    "build:css": "cross-env NODE_ENV=production & postcss src/styles/style.css -o _site/styles/style.css && cleancss _site/styles/style.css -o _site/styles/style.css",
-    "build:html": "cross-env ELEVENTY_PRODUCTION=true & eleventy",
+    "build:css": "cross-env NODE_ENV=production postcss src/styles/style.css -o _site/styles/style.css && cleancss _site/styles/style.css -o _site/styles/style.css",
+    "build:html": "cross-env ELEVENTY_PRODUCTION=true eleventy",
     "watch": "npm-run-all --parallel watch:html watch:css",
     "watch:css": "postcss src/styles/style.css -o _tmp/style.css --watch",
     "watch:html": "eleventy --serve",
