@@ -37,7 +37,7 @@
         {%- else -%}
           <p>You need to implement the article.</p>
         {%- endif -%}
-        <a href="{{ entry.url }}" class="w-full sm:text-right mt-2">{{ entry.linkText }}</a>
+        {%- if false -%}<a href="{{ entry.url }}" class="w-full sm:text-right mt-2">{{ entry.linkText }}</a>{%- endif -%}
       </article>
     {%- endfor -%}
   </section>
