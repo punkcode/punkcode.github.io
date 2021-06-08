@@ -3,9 +3,9 @@
 
 {%- block main %}
   <nav class="grid gap-4 grid-cols-1 lg:grid-cols-2">
-    {% set navPages = collections.all | eleventyNavigation %}
+    {% set navPages = collections.all | eleventyNavigation("Home") %}
     {%- for entry in navPages %}
-      {{ card(entry.title, entry.excerpt, entry.url, entry.goToText) }}
+      {{ card(entry.title, entry.excerpt, entry.url, entry.linkText) }}
     {% endfor -%}
   </nav>
 {% endblock -%}

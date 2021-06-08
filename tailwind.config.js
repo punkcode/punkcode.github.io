@@ -23,7 +23,8 @@ module.exports = {
   variants: {
     extend: {
       borderWidth: ['last'],
-      padding: ['last'],
+      padding: ['first', 'last'],
+      textColor: ['group-focus'],
     }
   },
   plugins: [],

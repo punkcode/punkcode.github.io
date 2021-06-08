@@ -1,0 +1,44 @@
+{% extends "./base.njk" %}
+
+{%- block main %}
+  <header>
+    <h1>{{ title }}</h1>
+  </header>
+  <section>
+    {% set navPages = collections.all | eleventyNavigation("Manifesto") %}
+    {%- for entry in navPages -%}
+      <article class="flex flex-wrap {{ 'border-t border-b border-penguin-black dark:border-penguin-tan my-4 py-4' if entry.key === 'Punk Code' }} {{ 'items-center justify-center mb-4' if entry.key === 'Code SLOW' }}">
+        {%- if entry.key === "The Punk Code" -%}
+        <ol class="w-full list-decimal pl-8">
+          <li>Question the status quo.</li>
+          <li>Learn your three chords.</li>
+          <li>Keep it fast, short, and simple.</li>
+          <li>Embrace a DIY Ethos.</li>
+          <li>Be honest. Be kind. To yourself. To others.</li>
+          <li>If someone falls, pick them up. If someone succeeds, lift them up.</li>
+          <li>Nobody can do everything, but everybody can do something.</li>
+        </ol>
+        {%- elif entry.key === "Punk Code" -%}
+        <ul class="w-full text-center grid sm:grid-cols-3 sm:items-center">
+          <li>&lt;punk-code&gt; is <br /> FAST</li>
+          <li class="text-penguin-orange sm:hidden">---</li>
+          <li class="sm:border-l sm:border-r sm:border-penguin-orange sm:my-2 sm:py-2">&lt;punk-code&gt; gets <br /> STRAIGHT TO THE POINT</li>
+          <li class="text-penguin-orange sm:hidden">---</li>
+          <li>&lt;punk-code&gt; is <br /> SIMPLE TO UNDERSTAND</li>
+        </ul>
+        {%- elif entry.key === "Code SLOW" -%}
+        <h2 class="text-center mr-4">Code <span class="sr-only">SLOW</span></h2>
+        <ul class="text-3xl md:text-4xl lg:text-5xl ml-4">
+          <li><span class="font-bowlby"><span class="sr-only">Code </span>S</span>ustainable</li>
+          <li><span class="font-bowlby"><span class="sr-only">Code </span>L</span>ocal</li>
+          <li><span class="font-bowlby"><span class="sr-only">Code </span>O</span>rganic</li>
+          <li><span class="font-bowlby"><span class="sr-only">Code </span>W</span>hole</li>
+        </ul>
+        {%- else -%}
+          <p>You need to implement the article.</p>
+        {%- endif -%}
+        <a href="{{ entry.url }}" class="w-full sm:text-right mt-2">{{ entry.linkText }}</a>
+      </article>
+    {%- endfor -%}
+  </section>
+{% endblock -%}

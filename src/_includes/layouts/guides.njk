@@ -1,0 +1,31 @@
+{% extends "./base.njk" %}
+{% from "../macros/components.njk" import card %}
+
+{%- block main %}
+  <header>
+    <h1>{{ title }}</h1>
+  </header>
+  {%- if hasGuides -%}
+  <nav>
+    <div class="grid gap-4 grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 mb-4">
+      {% for guide in guides %}
+      {{ card(guide.data.title, guide.data.excerpt, guide.url, guide.data.linkText) }}
+      {% else %}
+      <p>There are no guides. Yet.</p>
+      {% endfor %}
+    </div>
+    {%- if guides -%}
+    <div class="text-center">
+      {% if pagination.href.previous %}
+      <a href="{{ pagination.href.previous }}">Previous</a>
+      {% endif %}
+      {% if pagination.href.next %}
+      <a href="{{ pagination.href.next }}">Next</a>
+      {% endif %}
+    </div>
+    {%- endif -%}
+  </nav>
+  {%- else -%}
+  <p>There are no guides. Yet.</p>
+  {%- endif -%}
+{% endblock -%}
