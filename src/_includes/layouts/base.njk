@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="{{ description }}">
-    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/styles/style.css?v={% version %}">
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png?v=1">
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png?v=1">
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png?v=1">
@@ -15,24 +15,44 @@
     <meta name="msapplication-config" content="/assets/favicon/browserconfig.xml?v=1">
     <meta name="theme-color" content="#fb4901">
     <title>{%- if title %}{{ title }} | {% endif -%}{{ site.title }}</title>
+    <script defer src="/js/alpine.js?v={% version %}"></script>
   </head>
-  <body class="flex flex-col h-screen bg-penguin-tan dark:bg-penguin-black font-mono text-penguin-black dark:text-penguin-tan text-base md:text-lg">
+  <body
+    class="flex flex-col h-screen bg-penguin-tan dark:bg-penguin-black font-mono text-penguin-black dark:text-penguin-tan text-base md:text-lg"
+    x-data="{
+      embedVideo: localStorage.getItem('embedVideo'),
+      showSettings: !localStorage.getItem('embedVideo'),
+      setEmbedVideo(value) {
+        localStorage.setItem('embedVideo', value);
+        this.embedVideo = value;
+        this.showSettings = false;
+      },
+      closeSettingsWindow() {
+        if (!this.embedVideo) {
+          localStorage.setItem('embedVideo', 'ask');
+          this.embedVideo = 'ask';
+        }
+        this.showSettings = false;
+      },
+    }"
+  >
     {% include "./_header.njk" %}
-    <main class="container mx-auto p-4 flex-grow">
-      {%- if key %}
-        <nav class="flex mb-4">
+    <main class="container mx-auto my-1 px-4 flex-grow" x-show="!showSettings">
+      {%- if key -%}
+        <nav class="container mx-auto my-1 px-4 flex">
           {% set navPages = collections.all | eleventyNavigationBreadcrumb(key) %}
-          {%- for entry in navPages %}
+          {%- for entry in navPages -%}
             <a href="{{ entry.url }}" class="mr-2">{{ entry.title }}</a>
             <span class="mr-2">&gt;</span>
-          {% endfor -%}
+          {%- endfor -%}
           <span>{{ title }}</span>
         </nav>
-      {% endif -%}
-      {%- block main %}
+      {%- endif -%}
+      {%- block main -%}
         {{ content | safe }}
-      {% endblock -%}
+      {%- endblock -%}
     </main>
+    {% include "./_settings.njk" %}
     {% include "./_footer.njk" %}
   </body>
 </html>

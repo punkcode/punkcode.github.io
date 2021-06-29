@@ -1,7 +1,12 @@
 const htmlmin = require('html-minifier');
 const eleventyNavigation = require('@11ty/eleventy-navigation');
 
+const now = String(Date.now())
+
 module.exports = function(eleventyConfig) {
+  eleventyConfig.addShortcode('version', function () {
+    return now;
+  });
   
   // Create an alias for the base layer so we can reference it as base rather than the full paht.
   eleventyConfig.addLayoutAlias('base', 'layouts/base.njk');
@@ -22,6 +27,9 @@ module.exports = function(eleventyConfig) {
   // Copy over assets/images
   eleventyConfig.addPassthroughCopy('src/favicon.ico');
   eleventyConfig.addPassthroughCopy('src/assets');
+
+  // Handle AlpineJS
+  eleventyConfig.addPassthroughCopy({ 'node_modules/alpinejs/dist/cdn.min.js': 'js/alpine.js' });
   
   eleventyConfig.addTransform('htmlmin', function (content, outputPath) {
     if (process.env.ELEVENTY_PRODUCTION && outputPath && outputPath.endsWith('.html') ) {

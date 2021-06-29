@@ -1,0 +1,41 @@
+<article
+  class="border border-penguin-black dark:border-penguin-tan flex flex-col mx-2 my-2"
+  x-show="showSettings"
+>
+  <h2 class="p-2 penguin-header with-stroke flex">
+    <span>Settings</span>
+    <button class="ml-auto pr-2" @click="closeSettingsWindow()">
+      <span aria-hidden="true">X</span>
+      <span class="sr-only">Close settings window</span>
+    </button>
+  </h2>
+  <section class="p-2 mb-0 flex-1">
+    <p>Punk Code videos are hosted on LinkedIn.</p>
+    <p>LinkedIn does a bit of surveillance when a video is embedded that can't be turned off. Which sucks.</p>
+    <p>How do y'all want to handle it? Your choice will be saved in Local Storage.</p>
+    <p x-show="!embedVideo">Closing this window will select "Ask each time".</p>
+    <div class="flex my-2">
+      <button
+        class="btn mr-2"
+        :class="embedVideo === 'always' ? 'text-penguin-black' : ''"
+        @click="setEmbedVideo('always')"
+      >
+        Always embed
+      </button>
+      <button
+        class="btn mr-2"
+        :class="embedVideo === 'never' ? 'text-penguin-black' : ''"
+        @click="setEmbedVideo('never')"
+      >
+        Never embed
+      </button>
+      <button
+        class="btn"
+        :class="embedVideo === 'ask' ? 'text-penguin-black' : ''"
+        @click="setEmbedVideo('ask')"
+      >
+        Ask each time
+      </button>
+    </div>
+  </section>
+</article>
