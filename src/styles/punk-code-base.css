@@ -4,6 +4,10 @@
     src: url(/assets/fonts/Bowlby_One_SC/BowlbyOneSC-Regular.woff) format("woff");
     font-display: swap;
   }
+
+  [x-cloak] {
+    @apply hidden;
+  }
   
   h1, h2 {
     @apply font-bowlby;

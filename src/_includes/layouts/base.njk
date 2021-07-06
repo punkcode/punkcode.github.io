@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="{{ description }}">
-    <link rel="preload" href="/assets/fonts/BowlbyOneSC-Regular.woff" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/Bowlby_One_SC/BowlbyOneSC-Regular.woff" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="/styles/style.css?v={% version %}" as="style">
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png?v=1">
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png?v=1">
@@ -38,7 +38,7 @@
     }"
   >
     {% include "./_header.njk" %}
-    <main class="container mx-auto my-1 px-4 flex-grow" x-show="!showSettings">
+    <main class="container mx-auto my-1 px-4 flex-grow" x-cloak x-show="!showSettings">
       {%- if key -%}
         <nav class="container mx-auto my-1 px-4 flex">
           {% set navPages = collections.all | eleventyNavigationBreadcrumb(key) %}
