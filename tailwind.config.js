@@ -23,6 +23,7 @@ module.exports = {
   variants: {
     extend: {
       borderWidth: ['last'],
+      brightness: ['hover', 'focus'],
       padding: ['first', 'last'],
       textColor: ['group-focus'],
     }

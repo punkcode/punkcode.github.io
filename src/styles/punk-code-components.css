@@ -4,6 +4,6 @@
   }
 
   .btn {
-    @apply bg-penguin-orange text-penguin-tan hover:text-penguin-black focus:text-penguin-black border border-penguin-black dark:border-penguin-tan rounded font-bold py-2 px-4;
+    @apply bg-penguin-orange text-penguin-black border border-penguin-black dark:border-penguin-tan rounded font-bold py-2 px-4 filter hover:brightness-90 focus:brightness-90;
   }
 }
